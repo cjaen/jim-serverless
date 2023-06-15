@@ -12,6 +12,9 @@ jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
+    env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     steps:
     - name: Checkout Repo
       uses: actions/checkout@main
@@ -22,8 +25,4 @@ jobs:
       with:
         serverless_version: 3.32.2
         provider: aws
-      env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-
     - run: sls deploy
