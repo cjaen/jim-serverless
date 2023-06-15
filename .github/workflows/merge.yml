@@ -8,23 +8,18 @@ on:
     branches:
       - main
 
-jobs:
-  build:
-    name: Build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repo
-        uses: actions/checkout@main
-      - name: Install Dependencies
-        run: |
-          npm install
-          
+jobs:          
   deploy:
     name: Deploy
-    needs: build
     runs-on: ubuntu-latest
     steps:
-    - uses: Teakowa/setup-serverless@v2
+    - name: Checkout Repo
+      uses: actions/checkout@main
+    - name: Install Dependencies
+      run: |
+          npm install
+    - name: sls
+      uses: Teakowa/setup-serverless@v2
       with:
         serverless_version: 3.32.2
         provider: aws
