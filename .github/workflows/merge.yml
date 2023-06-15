@@ -24,7 +24,6 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-    - name: sls deploy
     - uses: Teakowa/setup-serverless@v2
       with:
         serverless_version: 3.32.2
