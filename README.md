@@ -1,20 +1,6 @@
-<!--
-title: 'Serverless Framework Node Express API service backed by DynamoDB on AWS'
-description: 'This template demonstrates how to develop and deploy a simple Node Express API service backed by DynamoDB running on AWS Lambda using the traditional Serverless Framework.'
-layout: Doc
-framework: v3
-platform: AWS
-language: nodeJS
-priority: 1
-authorLink: 'https://github.com/serverless'
-authorName: 'Serverless, inc.'
-authorAvatar: 'https://avatars1.githubusercontent.com/u/13742415?s=200&v=4'
--->
-
 # Serverless Framework Node Express API on AWS
 
-This template demonstrates how to develop and deploy a simple Node Express API service, backed by DynamoDB database, running on AWS Lambda using the traditional Serverless Framework.
-
+This template demonstrates how to develop and deploy a simple Node Express API service, backed by DynamoDB database, running on AWS Lambda using the traditional Serverless Framework. :)
 
 ## Anatomy of the template
 
@@ -122,8 +108,8 @@ with the following:
 ```javascript
 const dynamoDbClientParams = {};
 if (process.env.IS_OFFLINE) {
-  dynamoDbClientParams.region = 'localhost'
-  dynamoDbClientParams.endpoint = 'http://localhost:8000'
+  dynamoDbClientParams.region = "localhost";
+  dynamoDbClientParams.endpoint = "http://localhost:8000";
 }
 const dynamoDbClient = new AWS.DynamoDB.DocumentClient(dynamoDbClientParams);
 ```
@@ -135,5 +121,6 @@ serverless offline start
 ```
 
 To learn more about the capabilities of `serverless-offline` and `serverless-dynamodb-local`, please refer to their corresponding GitHub repositories:
+
 - https://github.com/dherault/serverless-offline
 - https://github.com/99x/serverless-dynamodb-local
