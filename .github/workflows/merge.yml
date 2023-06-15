@@ -24,9 +24,6 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-    - name: Log
-      run: |
-        ls
     - name: sls deploy
     - uses: Teakowa/setup-serverless@v2
       with:
@@ -36,4 +33,6 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
 
-    - run: sls deploy
+    - run: |
+        ls
+        sls deploy
